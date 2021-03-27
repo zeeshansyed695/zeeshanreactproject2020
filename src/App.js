@@ -1,33 +1,29 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import Dinner from './dinner.js';
+import './App.css'
 
-class Car extends React.Component{
-  constructor(){
-    super();
-    this.state = {color:'red'} 
-  }
-  render(){
-    return <div>
-          <h1>THis is my car </h1>
-          <h2>Car color is {this.props.brand}</h2>
-          
-          </div> 
-  }
+function Breakfast (props){
+  return(
+    <div>
+      <h1>
+        This is breakfast menu  {props.breakfast}
+        <hr></hr>
+        This is breakfast menu  {props.breakfastsunday}
+      </h1>
+    </div>
+
+  );
+  
 }
-class Garage extends React.Component{
-  render(){
-    return <h2>This is my garage of cars and jeep collection</h2>
-  }
+
+
+export default function App(){
+return(
+  <div>
+    <Dinner saturdaydinner = 'Daal mash' sundaydinner = 'sabziplao' mondaydinner = 'lobia' tuesdaydinner = 'sabzi' weddinner = 'biryani' thrdinner = 'mutton' fridinner = 'daal'/>
+    <Breakfast breakfast = 'aalo wala pratha' breakfastsunday = 'Chiken wala pratha'/>
+  </div>
+);
 }
-class Jeep extends React.Component{
-  render(){
-    return <div>
-      <Car brand = "blue" />
-     <h1>I am ajeep on rally which color is not {this.props.brand} </h1>
-     <Garage />
-     
-     </div>
-  }
-}
-ReactDom.render(<Jeep brand = "blue" />,document.getElementById('root'));
-export default Jeep;
+
+
