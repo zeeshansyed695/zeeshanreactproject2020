@@ -1,29 +1,25 @@
-import React from 'react';
-import Dinner from './dinner.js';
-import './App.css'
+import React ,{useReducer, useState} from 'react';
 
-function Breakfast (props){
-  return(
-    <div>
-      <h1>
-        This is breakfast menu  {props.breakfast}
-        <hr></hr>
-        This is breakfast menu  {props.breakfastsunday}
-      </h1>
-    </div>
+export default function App (){
+const[count,setcount] = useState(0);
+const [namne,setname] = useState('zeeshan');
 
-  );
-  
-}
-
-
-export default function App(){
 return(
-  <div>
-    <Dinner saturdaydinner = 'Daal mash' sundaydinner = 'sabziplao' mondaydinner = 'lobia' tuesdaydinner = 'sabzi' weddinner = 'biryani' thrdinner = 'mutton' fridinner = 'daal'/>
-    <Breakfast breakfast = 'aalo wala pratha' breakfastsunday = 'Chiken wala pratha'/>
-  </div>
+<div>
+  <h1>Hello {} you click the counter {count} times</h1>
+<h2>this is counter {count}</h2>
+
+<button onClick = {()=> setcount(count+1)}>Counter click me</button>
+<h2>this is counter {namne}</h2>
+<button onClick = {()=> setname('Zeeshan shah')}>Nmae changer</button>
+
+</div>
+
 );
+
+
+
+
+
+
 }
-
-
